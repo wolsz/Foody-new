@@ -12,6 +12,7 @@ import com.example.foody.util.Constants.Companion.PREFERENCES_MEAL_TYPE
 import com.example.foody.util.Constants.Companion.PREFERENCES_MEAL_TYPE_ID
 import com.example.foody.util.Constants.Companion.PREFERENCES_NAME
 import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.android.scopes.ActivityRetainedScoped
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
@@ -22,6 +23,7 @@ private val Context.prefsDataStore by preferencesDataStore(
     name = PREFERENCES_NAME
 )
 
+@ActivityRetainedScoped
 class DataStoreRepository @Inject constructor(@ApplicationContext private val context: Context) {
 
     private object PreferenceKeys {
