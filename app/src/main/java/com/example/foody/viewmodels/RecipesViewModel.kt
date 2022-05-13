@@ -69,6 +69,12 @@ class RecipesViewModel @Inject constructor(
         return queries
     }
 
+    fun applySearchQuery(searchQuery: String): HashMap<String, String> {
+        val queries: HashMap<String, String> = HashMap()
+
+        return queries
+    }
+
     fun showNetworkStatus() {
         if (!networkStatus) {
             Toast.makeText(getApplication(), "No Internet Connection.", Toast.LENGTH_SHORT).show()
