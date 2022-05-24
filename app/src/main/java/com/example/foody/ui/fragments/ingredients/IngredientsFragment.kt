@@ -1,4 +1,4 @@
-package com.example.foody.ui.fragments.foodjoke
+package com.example.foody.ui.fragments.ingredients
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.foody.R
 import com.example.foody.databinding.FragmentFoodJokeBinding
-import com.example.foody.databinding.FragmentRecipesBinding
+import com.example.foody.databinding.FragmentIngredientsBinding
 
-class FoodJokeFragment : Fragment() {
+class IngredientsFragment : Fragment() {
 
-    private var _binding: FragmentFoodJokeBinding? = null
+    private var _binding: FragmentIngredientsBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -19,8 +19,7 @@ class FoodJokeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentFoodJokeBinding.inflate(inflater, container, false)
-
+        _binding = FragmentIngredientsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
