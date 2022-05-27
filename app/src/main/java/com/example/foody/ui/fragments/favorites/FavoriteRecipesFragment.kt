@@ -5,12 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.foody.databinding.FragmentFavoriteRecipesBinding
 import com.example.foody.databinding.FragmentRecipesBinding
 
 
 class FavoriteRecipesFragment : Fragment() {
 
-    private var _binding: FragmentRecipesBinding? = null
+    private var _binding: FragmentFavoriteRecipesBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,7 +19,7 @@ class FavoriteRecipesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentRecipesBinding.inflate(inflater, container, false)
+        _binding = FragmentFavoriteRecipesBinding.inflate(inflater, container, false)
 
         return binding.root
     }

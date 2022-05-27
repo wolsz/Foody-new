@@ -40,17 +40,6 @@ class RecipesAdapter : ListAdapter<Result, RecipesAdapter.MyViewHolder>(RecipesD
         val currentRecipe = getItem(position)
         holder.bind(currentRecipe)
     }
-
-//    override fun getItemCount(): Int {
-//        return recipes.size
-//    }
-
-//    fun setData(newData: FoodRecipe) {
-//        val recipesDiffUtil = RecipesDiffUtil(recipes, newData.results)
-//        val diffUtilResult = DiffUtil.calculateDiff(recipesDiffUtil)
-//        recipes = newData.results
-//        diffUtilResult.dispatchUpdatesTo(this)
-//    }
 }
 
 class RecipesDiffCallback : DiffUtil.ItemCallback<Result>() {

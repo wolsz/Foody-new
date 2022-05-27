@@ -1,15 +1,17 @@
 package com.example.foody.ui.fragments.overview
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import coil.load
 import com.example.foody.R
 import com.example.foody.databinding.FragmentOverviewBinding
 import com.example.foody.models.Result
+import com.example.foody.util.Constants.Companion.RECIPES_RESULT_KEY
+import org.jsoup.Jsoup
 
 
 class OverviewFragment : Fragment() {
@@ -25,14 +27,14 @@ class OverviewFragment : Fragment() {
         _binding = FragmentOverviewBinding.inflate(layoutInflater, container, false)
 
         val args = arguments
-        val myBundle: Result? = args?.getParcelable("recipeBundle")
+        val myBundle: Result? = args?.getParcelable(RECIPES_RESULT_KEY)
 
         myBundle?.let {
             binding.mainImageView.load(it.image)
             binding.overviewTitleTextView.text = it.title
             binding.likesTextView.text = it.aggregateLikes.toString()
             binding.timeTextView.text = it.readyInMinutes.toString()
-            binding.summaryTextView.text = it.summary
+            binding.summaryTextView.text = it.summary?.let { it1 -> Jsoup.parse(it1).text() }
 
             if (it.vegetarian) {
                 binding.vegetarianImageView.setColorFilter(ContextCompat.getColor(requireContext(), R.color.green))

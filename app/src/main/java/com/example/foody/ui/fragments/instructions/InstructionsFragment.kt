@@ -1,13 +1,14 @@
 package com.example.foody.ui.fragments.instructions
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.foody.R
-import com.example.foody.databinding.FragmentIngredientsBinding
+import android.webkit.WebViewClient
+import androidx.fragment.app.Fragment
 import com.example.foody.databinding.FragmentInstructionsBinding
+import com.example.foody.models.Result
+import com.example.foody.util.Constants.Companion.RECIPES_RESULT_KEY
 
 class InstructionsFragment : Fragment() {
 
@@ -20,6 +21,15 @@ class InstructionsFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentInstructionsBinding.inflate(inflater, container, false)
+
+        val args = arguments
+        val myBundle: Result? = args?.getParcelable(RECIPES_RESULT_KEY)
+
+        binding.instructionsWebView.webViewClient = object: WebViewClient() {}
+        myBundle?.sourceUrl?.let {
+            binding.instructionsWebView.loadUrl(it)
+        }
+
         return binding.root
     }
 
