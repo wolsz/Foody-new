@@ -2,12 +2,14 @@ package com.example.foody.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.navArgs
 import com.example.foody.R
 import com.example.foody.adapters.PagerAdapter
+import com.example.foody.data.database.entities.FavoritesEntity
 import com.example.foody.databinding.ActivityDetailsBinding
 import com.example.foody.ui.fragments.ingredients.IngredientsFragment
 import com.example.foody.ui.fragments.instructions.InstructionsFragment
@@ -57,10 +59,21 @@ class DetailsActivity : AppCompatActivity() {
         }.attach()
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.details_menu, menu)
+        return true
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
             finish()
+        } else if (item.itemId == R.id.save_to_favorites_menu) {
+            saveToFavorites(item)
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun saveToFavorites(item: MenuItem) {
+        val favoritesEntity = FavoritesEntity(0, args.result)
     }
 }
