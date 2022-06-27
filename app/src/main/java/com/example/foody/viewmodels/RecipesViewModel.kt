@@ -1,6 +1,7 @@
 package com.example.foody.viewmodels
 
 import android.app.Application
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.asLiveData
@@ -20,6 +21,7 @@ import com.example.foody.util.Constants.Companion.QUERY_SEARCH
 import com.example.foody.util.Constants.Companion.QUERY_TYPE
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -58,6 +60,7 @@ class RecipesViewModel @Inject constructor(
                 mealType = value.selectedMealType
                 dietType = value.selectedDietType
             }
+
         }
 
         queries[QUERY_NUMBER] = DEFAULT_RECIPES_NUMBER

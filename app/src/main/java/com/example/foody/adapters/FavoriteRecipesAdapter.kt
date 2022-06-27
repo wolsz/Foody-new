@@ -1,5 +1,6 @@
 package com.example.foody.adapters
 
+import android.util.Log
 import android.view.*
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
@@ -14,6 +15,7 @@ import com.example.foody.databinding.FavoriteRecipesRowLayoutBinding
 import com.example.foody.ui.fragments.favorites.FavoriteRecipesFragmentDirections
 import com.example.foody.viewmodels.MainViewModel
 import com.google.android.material.snackbar.Snackbar
+import kotlin.math.log
 
 class FavoriteRecipesAdapter(
     private val requireActivity: FragmentActivity,
@@ -38,8 +40,8 @@ class FavoriteRecipesAdapter(
         companion object {
             fun from (parent: ViewGroup): MyViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
-                val binding = FavoriteRecipesRowLayoutBinding.inflate(layoutInflater, parent, false)
-                return MyViewHolder(binding)
+                val binder = FavoriteRecipesRowLayoutBinding.inflate(layoutInflater, parent, false)
+                return MyViewHolder(binder)
             }
         }
 
@@ -78,10 +80,14 @@ class FavoriteRecipesAdapter(
                 multiSelection = true
                 requireActivity.startActionMode(this)
                 applySelection(holder, currentRecipe)
+                Log.d("onBindViewHolder", "In multi-selection false section $multiSelection")
                 true
             } else {
                 multiSelection = false
-                false
+                Log.d("onBindViewHolder", "In multi-selection else section $multiSelection")
+                selectedRecipes.clear()
+                mActionMode?.finish()
+                true
             }
 
         }

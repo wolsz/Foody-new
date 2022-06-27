@@ -5,11 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.example.foody.R
 import com.example.foody.databinding.FragmentFoodJokeBinding
 import com.example.foody.databinding.FragmentRecipesBinding
+import com.example.foody.viewmodels.MainViewModel
 
 class FoodJokeFragment : Fragment() {
+
+    private val mainViewModel by viewModels<MainViewModel> ()
 
     private var _binding: FragmentFoodJokeBinding? = null
     private val binding get() = _binding!!

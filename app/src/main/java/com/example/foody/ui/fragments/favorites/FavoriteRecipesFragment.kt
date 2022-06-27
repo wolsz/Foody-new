@@ -9,7 +9,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.foody.R
 import com.example.foody.adapters.FavoriteRecipesAdapter
 import com.example.foody.databinding.FragmentFavoriteRecipesBinding
-import com.example.foody.databinding.FragmentRecipesBinding
 import com.example.foody.viewmodels.MainViewModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
@@ -48,6 +47,7 @@ class FavoriteRecipesFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.deleteAll_favorite_recipes_menu) {
             mainViewModel.deleteAllFavoriteRecipes()
+            showSnackBar()
         }
         return super.onOptionsItemSelected(item)
     }
@@ -57,10 +57,10 @@ class FavoriteRecipesFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
     }
 
-    private fun showSnackBar(message: String) {
+    private fun showSnackBar() {
         Snackbar.make(
             binding.root,
-            message,
+            "All Favorite recipes removed",
             Snackbar.LENGTH_SHORT
         ).setAction("OK") {}
             .show()
