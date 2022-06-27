@@ -80,13 +80,13 @@ class FavoriteRecipesAdapter(
                 multiSelection = true
                 requireActivity.startActionMode(this)
                 applySelection(holder, currentRecipe)
-                Log.d("onBindViewHolder", "In multi-selection false section $multiSelection")
+//                Log.d("onBindViewHolder", "In multi-selection false section $multiSelection")
                 true
             } else {
                 multiSelection = false
-                Log.d("onBindViewHolder", "In multi-selection else section $multiSelection")
+//                Log.d("onBindViewHolder", "In multi-selection else section $multiSelection")
                 selectedRecipes.clear()
-                mActionMode?.finish()
+                mActionMode.finish()
                 true
             }
 
