@@ -5,7 +5,10 @@
       <map>
         <entry key="..\:/Code/Foody-new/app/src/main/res/drawable/gradient_overlay.xml" value="0.3135" />
         <entry key="..\:/Code/Foody-new/app/src/main/res/drawable/ic_error_placeholder.xml" value="0.167" />
+        <entry key="..\:/Code/Foody-new/app/src/main/res/drawable/ic_food_joke_background_dark.xml" value="0.327" />
         <entry key="..\:/Code/Foody-new/app/src/main/res/drawable/ic_food_joke_background_light.xml" value="0.327" />
+        <entry key="..\:/Code/Foody-new/app/src/main/res/drawable/ic_splash_screen_light.xml" value="0.327" />
+        <entry key="..\:/Code/Foody-new/app/src/main/res/layout-night/fragment_food_joke.xml" value="0.38697916666666665" />
         <entry key="..\:/Code/Foody-new/app/src/main/res/layout/activity_details.xml" value="0.38697916666666665" />
         <entry key="..\:/Code/Foody-new/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
         <entry key="..\:/Code/Foody-new/app/src/main/res/layout/favorite_recipes_row_layout.xml" value="0.5" />
@@ -23,6 +26,7 @@
         <entry key="..\:/Code/Foody-new/app/src/main/res/menu/details_menu.xml" value="0.3859375" />
         <entry key="..\:/Code/Foody-new/app/src/main/res/menu/favorite_recipes_menu.xml" value="0.3859375" />
         <entry key="..\:/Code/Foody-new/app/src/main/res/menu/favorites_contextual_menu.xml" value="0.3859375" />
+        <entry key="..\:/Code/Foody-new/app/src/main/res/menu/food_joke_menu.xml" value="0.3859375" />
         <entry key="..\:/Code/Foody-new/app/src/main/res/menu/recipes_menu.xml" value="0.3859375" />
       </map>
     </option>

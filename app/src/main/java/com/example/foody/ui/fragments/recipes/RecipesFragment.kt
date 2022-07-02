@@ -54,7 +54,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentRecipesBinding.inflate(inflater, container, false)
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
         binding.mainViewModel = mainViewModel
 
         setHasOptionsMenu(true)
@@ -64,7 +64,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
         recipesViewModel.readBackOnline.observe(viewLifecycleOwner) {
             recipesViewModel.backOnline = it
         }
-        lifecycleScope.launch {
+        lifecycleScope.launchWhenStarted {
             networkListener = NetworkListener()
             networkListener.checkNetworkAvailability(requireContext())
                 .collect { status ->
