@@ -28,13 +28,13 @@ class IngredientsFragment : Fragment() {
         val args = arguments
         val myBundle: Result? = args?.getParcelable(RECIPES_RESULT_KEY)
 
-        setupRecyclerView(binding.root)
+        setupRecyclerView()
         myBundle?.extendedIngredients.let { mAdapter.submitList(it) }
 
         return binding.root
     }
 
-    private fun setupRecyclerView(view: View) {
+    private fun setupRecyclerView() {
         binding.ingredientsRecyclerview.adapter = mAdapter
         binding.ingredientsRecyclerview.layoutManager = LinearLayoutManager(requireContext())
     }

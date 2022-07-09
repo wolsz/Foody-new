@@ -18,7 +18,7 @@ class IngredientsAdapter: ListAdapter<ExtendedIngredient, IngredientsAdapter.MyV
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
+//        val inflater = LayoutInflater.from(parent.context)
         return MyViewHolder(IngredientsRowLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
